@@ -1,20 +1,20 @@
-# 🎵 MP3 Download
+# MP3 Download
 
 Modern web application to download audio from YouTube, SoundCloud, Vimeo and other platforms.
 
-## ✨ Features
+## Features
 
-- 🎧 Download audio in MP3 format
-- 🌍 **Multi-language support** (Portuguese and English)
-- 🌓 **Light and dark theme** with automatic detection
-- 🎨 Modern interface with Tailwind CSS
-- 🔄 Animated progress bar
-- 🗑️ Automatic cleanup of temporary files
-- 📱 Responsive design
-- ⚡ No permanent server storage
-- 💾 Preferences saved in localStorage
+- Download audio in MP3 format
+- **Multi-language support** (Portuguese and English)
+- **Light and dark theme** with automatic detection
+- Modern interface with Tailwind CSS
+- Animated progress bar
+- Automatic cleanup of temporary files
+- Responsive design
+- No permanent server storage
+- Preferences saved in localStorage
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 node-mp3-download/
@@ -43,7 +43,7 @@ node-mp3-download/
 └── package.json
 ```
 
-## 🚀 How to Use
+## How to Use
 
 ### Install dependencies
 
@@ -85,9 +85,10 @@ yarn cli
 npm run cli
 ```
 
-## 🛠️ Technologies
+## Technologies
 
 ### Backend
+
 - **TypeScript** - Static typing and safety
 - **Express** - Web framework
 - **yt-dlp-exec** - Video download
@@ -95,43 +96,48 @@ npm run cli
 - **tsx** - TypeScript execution in development
 
 ### Frontend
+
 - **Tailwind CSS** - CSS framework
 - **Lucide Icons** - SVG icons
 - **Inter Font** - Modern typography
 - **i18n** - Custom internationalization system
 
-## 💎 TypeScript
+## TypeScript
 
 The project uses **TypeScript** for greater safety and productivity:
 
-- ✅ **Static typing** - Errors detected at development time
-- ✅ **IntelliSense** - Autocomplete and inline documentation
-- ✅ **Safe refactoring** - Changes with confidence
-- ✅ **Interfaces and types** - Clear contracts between components
-- ✅ **Strict mode** - Maximum type safety
+- **Static typing** - Errors detected at development time
+- **IntelliSense** - Autocomplete and inline documentation
+- **Safe refactoring** - Changes with confidence
+- **Interfaces and types** - Clear contracts between components
+- **Strict mode** - Maximum type safety
 
 ### Available scripts:
+
 - `yarn dev` - Development with hot reload (tsx)
 - `yarn build` - Compile TypeScript to JavaScript
 - `yarn start` - Run compiled version
 - `yarn type-check` - Check types without compiling
 
-## 🌓 Theme System
+## Theme System
 
 The project supports light and dark themes with smooth transitions:
 
 ### **Available Themes:**
-- ☀️ **Light Mode** - Vibrant light theme
-- 🌙 **Dark Mode** - Elegant dark theme
+
+- **Light Mode** - Vibrant light theme
+- **Dark Mode** - Elegant dark theme
 
 ### **Features:**
-- ✅ **Automatic detection** - Uses system preference
-- ✅ **Toggle button** - Sun/moon icon in header
-- ✅ **Persistence** - Preference saved in localStorage
-- ✅ **Smooth transitions** - 300ms CSS animations
-- ✅ **CSS Variables** - Dynamic and reusable colors
+
+- **Automatic detection** - Uses system preference
+- **Toggle button** - Sun/moon icon in header
+- **Persistence** - Preference saved in localStorage
+- **Smooth transitions** - 300ms CSS animations
+- **CSS Variables** - Dynamic and reusable colors
 
 ### **How it works:**
+
 ```javascript
 // Toggle theme
 themeManager.toggleTheme()
@@ -141,27 +147,31 @@ themeManager.applyTheme('dark')
 ```
 
 ### **CSS Variables:**
+
 - Background gradients
 - Card colors
 - Text colors (primary/secondary)
 - Border colors
 - Input styles
 
-## 🌍 Internationalization (i18n)
+## Internationalization (i18n)
 
 The project supports multiple languages with a custom system:
 
 ### **Available Languages:**
-- 🇧🇷 **Portuguese** (pt)
-- 🇺🇸 **English** (en)
+
+- **Portuguese** (pt)
+- **English** (en)
 
 ### **Features:**
-- ✅ **Automatic detection** - Uses browser language
-- ✅ **Visual selector** - Language switch in header
-- ✅ **Persistence** - Preference saved in localStorage
-- ✅ **Dynamic update** - Interface updates without reload
+
+- **Automatic detection** - Uses browser language
+- **Visual selector** - Language switch in header
+- **Persistence** - Preference saved in localStorage
+- **Dynamic update** - Interface updates without reload
 
 ### **How it works:**
+
 ```javascript
 // Use translation
 i18n.t('downloadButton') // "Baixar Áudio" or "Download Audio"
@@ -171,38 +181,45 @@ i18n.setLanguage('en')
 ```
 
 ### **Add new language:**
+
 1. Edit `public/js/i18n.js`
 2. Add translations object
 3. Add option in HTML selector
 
-## 📦 Architecture
+## Architecture
 
 ### OOP Architecture (Object-Oriented Programming)
 
 **`Server` Class** - Orchestrates the entire application:
+
 - Initializes components
 - Configures routes
 - Manages lifecycle
 
 **`App` Class** - Configures Express:
+
 - `setupMiddlewares()` - Configures CORS, JSON, static files
 - `useRoutes()` - Adds routes
 - `listen()` - Starts server
 
 **`DownloadController` Class** - Business logic:
+
 - `downloadAudio()` - Processes audio download
 - `serveAndDeleteFile()` - Serves file and deletes after download
 
 **`FileManager` Class** - File management:
+
 - `clean()` - Cleans temporary files
 - `ensure()` - Ensures temp folder exists
 
 ### Routes
+
 Defines API endpoints:
+
 - `POST /api/download` - Starts download
 - `GET /api/download/:filename` - Serves file
 
-## 🔄 How It Works
+## How It Works
 
 1. User pastes video URL
 2. Frontend sends request to `/api/download`
@@ -212,13 +229,10 @@ Defines API endpoints:
 6. User clicks to download
 7. File is automatically deleted after download
 
-## 🧹 Automatic Cleanup
+## Automatic Cleanup
 
 The `temp` folder is automatically cleaned:
-- ✅ When starting the server
-- ✅ When stopping the server (Ctrl+C)
-- ✅ After each successful download
 
-## 📝 License
-
-MIT
+- When starting the server
+- When stopping the server (Ctrl+C)
+- After each successful download
