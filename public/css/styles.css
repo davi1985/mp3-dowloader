@@ -1,0 +1,102 @@
+/* Variáveis de Tema */
+:root[data-theme="light"] {
+  --bg-gradient-start: #9333ea;
+  --bg-gradient-mid: #7c3aed;
+  --bg-gradient-end: #4f46e5;
+  --card-bg: #ffffff;
+  --header-gradient-start: #7e22ce;
+  --header-gradient-end: #3730a3;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --border-color: #e5e7eb;
+  --input-bg: #ffffff;
+  --input-border: #d1d5db;
+}
+
+:root[data-theme="dark"] {
+  --bg-gradient-start: #1e1b4b;
+  --bg-gradient-mid: #312e81;
+  --bg-gradient-end: #1e3a8a;
+  --card-bg: #1f2937;
+  --header-gradient-start: #4c1d95;
+  --header-gradient-end: #1e3a8a;
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --border-color: #374151;
+  --input-bg: #111827;
+  --input-border: #4b5563;
+}
+
+/* Fonte */
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Animações */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes progress {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(400%);
+  }
+}
+
+/* Componentes */
+.spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #8b5cf6;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.status {
+  animation: slideIn 0.3s ease;
+}
+
+.progress-bar {
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: progress 1.5s ease-in-out infinite;
+}
