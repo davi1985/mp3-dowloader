@@ -1,0 +1,27 @@
+{
+  "name": "mp3-download",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "cli": "node index.mjs",
+    "type-check": "tsc --noEmit",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "readline-sync": "^1.4.10",
+    "yt-dlp-exec": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^22.13.5",
+    "@vercel/node": "^5.4.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}
